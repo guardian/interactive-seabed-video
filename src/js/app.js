@@ -1,4 +1,5 @@
 let scrollPos = 0;
+let currentTargetTime = 0;
 
 function featureTest(property, value, noPrefixes) {
     var prop = property + ':',
@@ -47,9 +48,18 @@ const checkTags = () => {
     const timingToAimFor = timings[passedPs.length - 1];
 
     if (timingToAimFor > videoEl.currentTime) {
+        currentTargetTime = timingToAimFor;
         videoEl.play();
 
         shouldPauseVideo(timingToAimFor);
+    } else {
+        if(currentTargetTime > timingToAimFor) {
+            videoEl.pause();
+            let timeToGoTo = (passedPs.length - 2 > 0) ? timings[passedPs.length] : 0;
+            videoEl.currentTime = timeToGoTo;
+
+            currentTargetTime = timingToAimFor;
+        }
     }
 }
 
@@ -95,4 +105,19 @@ const fixOrUnfix = () => {    const containerBBox = videoElContainer.getBounding
     }
 }
 
+const switchSrc = () => {
+    const width = videoEl.clientWidth;
+    if(width > 620) {
+        videoEl.setAttribute("src", process.env.PATH + "/assets/ships_1.mp4");
+        videoEl.load();
+    } else if(width > 600) {
+        videoEl.setAttribute("src", process.env.PATH + "/assets/ships_2.mp4");
+        videoEl.load();
+    } else {
+        videoEl.setAttribute("src", process.env.PATH + "/assets/ships_3.mp4");
+        videoEl.load();
+    }
+}
+
+switchSrc()
 doScrollyThings();
