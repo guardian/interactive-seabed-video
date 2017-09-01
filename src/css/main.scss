@@ -5,7 +5,8 @@
 // @import "embed";
 // Uncomment for full screen (including immersive article main media)
 //@import "fullscreen";
-.interactive-atom {
+.interactive-atom,
+.element--immersive iframe {
     margin-left: -10px;
     margin-right: -10px;
     position: relative;
