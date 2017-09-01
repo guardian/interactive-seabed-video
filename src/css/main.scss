@@ -98,7 +98,13 @@
           line-height: 28px;
         }
 
-        @include mq($from: mobileLandscape, $until:leftCol) {
+        @include mq($from: mobileLandscape, $until:tablet) {
+          font-size: 18px;
+          line-height: 28px;
+          font-weight: 400;
+        }
+
+        @include mq($from: tablet, $until:leftCol) {
           font-size: 21px;
           line-height: 28px;
           font-weight: 400;
