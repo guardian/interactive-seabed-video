@@ -22,7 +22,7 @@ const videoElParent = videoElContainer.querySelector(".interactive-seabed__video
 
 const videoEl = videoElParent.querySelector("video");
 
-const timings = [4, 8];
+const timings = [4, 8,10];
 
 const supportsSticky = featureTest('position', 'sticky') || featureTest('position', '-webkit-sticky');
 
@@ -108,7 +108,7 @@ const fixOrUnfix = () => {    const containerBBox = videoElContainer.getBounding
 const switchSrc = () => {
     const width = videoEl.clientWidth;
     if(width > 620) {
-        videoEl.setAttribute("src", process.env.PATH + "/assets/test.mp4");
+        videoEl.setAttribute("src", process.env.PATH + "/assets/ships_1.mp4");
         videoEl.load();
     } else if(width > 600) {
         videoEl.setAttribute("src", process.env.PATH + "/assets/ships_2.mp4");

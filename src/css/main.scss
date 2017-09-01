@@ -17,7 +17,24 @@
 }
 
 .interactive-seabed__text-wrapper {
-    margin-top: -100vh;
+
+      margin-top: -100vh;
+      @include mq(mobile){
+        margin-top: -65vh;
+      }
+
+      @include mq(mobileLandscape){
+        margin-top: -60vh;
+      }
+      @include mq(tablet){
+        margin-top: -65vh;
+      }
+      @include mq(desktop){
+        margin-top: -100vh;
+      }
+      @include mq(wide){
+        margin-top: -120vh;
+      }
 }
 
 .interactive-seabed__text {
@@ -26,16 +43,41 @@
     z-index: 200;
     max-width: 620px;
 
+    @include mq(mobile) {
+      height: 60vh;
+      max-width: 90%;
+    }
+
+    @include mq(mobileLandscape) {
+      height: 65vh;
+      max-width: 90%;
+    }
+
+    @include mq(tablet) {
+      height: 65vh;
+      max-width:620px;
+      margin-left: 15px;
+    }
+
+
     @include mq(desktop) {
-    	margin-left: 20px;
+    	margin-left: 15px;
+      max-width:620px;
+      height:100vh;
     }
 
     @include mq(leftCol) {
-    	margin-left: 180px;
+    	margin-left: 175px;
+      height:100vh;
+      max-width:620px;
     }
 
+
+
     @include mq(wide) {
-    	margin-left: 260px;
+    	margin-left: 255px;
+      height:120vh;
+      max-width: 620px;
 	}
 
     p {
@@ -45,14 +87,35 @@
         padding: 5px 5px 5px 5px;
         box-decoration-break: clone;
         -webkit-box-decoration-break: clone;
-        @include fs-headline(3);
-        font-size:24px;
+        // @include fs-headline(3);
+        font-size: 24px;
         line-height: 32px;
         font-weight: 400;
+
+        @include mq(mobile) {
+          font-size:18px;
+          line-height: 28px;
+        }
+
+        @include mq($from: mobileLandscape, $until:leftCol) {
+          font-size: 21px;
+          line-height: 28px;
+          font-weight: 400;
+        }
+
+        @include mq($from: leftCol) {
+          font-size: 24px;
+          line-height: 32px;
+          font-weight: 400;
+        }
+
+
+
     }
 }
 
 .interactive-seabed__container {
+  margin-top:35px;
     .no-sticky & {
         overflow: hidden;
     }
@@ -60,30 +123,44 @@
 
 .interactive-seabed__video {
     position: absolute;
-	position: -webkit-sticky;
+	   position: -webkit-sticky;
     position: sticky;
     top: 0;
     line-height: 0;
     height: 100vh;
     overflow: hidden;
-
     width: 100vw;
+
+    @include mq(mobile) {
+        // margin-left: -10px;
+        height:65vh;
+    }
+
+    @include mq(mobileLandscape) {
+        // margin-left: -10px;
+        height:55vh;
+    }
 
     @include mq(tablet) {
         width: 740px;
         // margin-left: -10px;
+        height:55vh;
     }
+
 
     @include mq(desktop) {
         width: 980px;
+        height:100vh;
     }
 
     @include mq(leftCol) {
         width: 1140px;
+        height:100vh;
     }
 
     @include mq(wide) {
         width: 1300px;
+        height:120vh;
     }
 
     video {
