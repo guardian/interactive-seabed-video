@@ -17,6 +17,23 @@
     }
 }
 
+.content__main-column--interactive>h2 {
+  font-size: 32px !important;
+  line-height: 42px !important;
+  font-family: "Guardian Egyptian Web", Georgia;
+  font-weight: 200;
+
+  @include mq($from: mobile, $until:leftCol) {
+    font-size: 28px !important;
+    line-height: 38px !important;
+  }
+
+  @include mq($from: leftCol) {
+    font-size: 32px !important;
+    line-height: 42px !important;
+  }
+}
+
 .interactive-seabed__text-wrapper {
 
       margin-top: -100vh;
@@ -25,7 +42,7 @@
       }
 
       @include mq(mobileLandscape){
-        margin-top: -60vh;
+        margin-top: -62vh;
       }
       @include mq(tablet){
         margin-top: -65vh;
@@ -34,7 +51,7 @@
         margin-top: -100vh;
       }
       @include mq(wide){
-        margin-top: -120vh;
+        margin-top: -100vh;
       }
 }
 
@@ -50,7 +67,7 @@
     }
 
     @include mq(mobileLandscape) {
-      height: 65vh;
+      height: 70vh;
       max-width: 90%;
     }
 
@@ -76,12 +93,13 @@
 
 
     @include mq(wide) {
-    	margin-left: 255px;
-      height:120vh;
+    	margin-left: 240px;
+      height:100vh;
       max-width: 620px;
 	}
 
     p {
+        font-family: "Guardian Egyptian Web", Georgia;
         display: inline;
         background-color: rgba(255, 255, 255, 0.76);
         color: #333;
@@ -89,31 +107,24 @@
         box-decoration-break: clone;
         -webkit-box-decoration-break: clone;
         // @include fs-headline(3);
-        font-size: 24px;
-        line-height: 32px;
-        font-weight: 400;
+        font-size: 32px;
+        line-height: 42px;
+        font-weight: 200;
 
-        @include mq(mobile) {
-          font-size:18px;
-          line-height: 28px;
-        }
+        @include mq($from: mobile, $until:leftCol) {
+          font-size: 28px;
+          line-height: 38px;
 
-        @include mq($from: mobileLandscape, $until:tablet) {
-          font-size: 18px;
-          line-height: 28px;
-          font-weight: 400;
-        }
-
-        @include mq($from: tablet, $until:leftCol) {
-          font-size: 21px;
-          line-height: 28px;
-          font-weight: 400;
         }
 
         @include mq($from: leftCol) {
-          font-size: 24px;
-          line-height: 32px;
-          font-weight: 400;
+          font-size: 32px;
+          line-height: 42px;
+          padding-left:20px;
+        }
+
+        @include mq($from: mobileLandscape, $until: tablet){
+          padding-left:20px;
         }
 
 
@@ -145,13 +156,13 @@
 
     @include mq(mobileLandscape) {
         // margin-left: -10px;
-        height:55vh;
+        height:58vh;
     }
 
     @include mq(tablet) {
         width: 740px;
         // margin-left: -10px;
-        height:55vh;
+        height:65vh;
     }
 
 
@@ -167,7 +178,7 @@
 
     @include mq(wide) {
         width: 1300px;
-        height:120vh;
+        height:100vh;
     }
 
     video {
@@ -177,4 +188,30 @@
         top: 50%;
         transform: translateY(-50%);
     }
+}
+
+figure.element-interactive iframe {
+  @include mq(mobile) {
+    width:320px;
+  }
+
+  @include mq(mobileLandscape) {
+    width:480px !important;
+  }
+
+  @include mq(tablet) {
+    width:740px !important;
+  }
+
+  @include mq(desktop) {
+    width:980px !important;
+  }
+
+  @include mq(leftCol) {
+    width:1140px !important;
+  }
+
+  @include mq(wide) {
+    width:1300px !important;
+  }
 }
