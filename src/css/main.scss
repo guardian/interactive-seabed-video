@@ -38,11 +38,11 @@
 
       margin-top: -100vh;
       @include mq(mobile){
-        margin-top: -65vh;
+        margin-top: -85vh;
       }
 
       @include mq(mobileLandscape){
-        margin-top: -62vh;
+        margin-top: -82vh;
       }
       @include mq(tablet){
         margin-top: -65vh;
@@ -62,19 +62,19 @@
     max-width: 620px;
 
     @include mq(mobile) {
-      height: 60vh;
+      height: 85vh;
       max-width: 90%;
     }
 
     @include mq(mobileLandscape) {
-      height: 70vh;
+      height: 82vh;
       max-width: 90%;
     }
 
     @include mq(tablet) {
       height: 65vh;
       max-width:620px;
-      margin-left: 15px;
+      // margin-left: 15px;
     }
 
 
@@ -85,7 +85,7 @@
     }
 
     @include mq(leftCol) {
-    	margin-left: 175px;
+    	margin-left: 155px;
       height:100vh;
       max-width:620px;
     }
@@ -120,11 +120,10 @@
         @include mq($from: leftCol) {
           font-size: 32px;
           line-height: 42px;
-          padding-left:20px;
         }
 
         @include mq($from: mobileLandscape, $until: tablet){
-          padding-left:20px;
+
         }
 
 
@@ -151,12 +150,12 @@
 
     @include mq(mobile) {
         // margin-left: -10px;
-        height:65vh;
+        height:85vh;
     }
 
     @include mq(mobileLandscape) {
         // margin-left: -10px;
-        height:58vh;
+        height:82vh;
     }
 
     @include mq(tablet) {
