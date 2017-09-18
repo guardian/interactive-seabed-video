@@ -22,11 +22,11 @@ const videoElParent = videoElContainer.querySelector(".interactive-seabed__video
 
 const videoEl = videoElParent.querySelector("video");
 
-const timings = [4, 8,10];
+const timings = [4, 8, 10];
 
 const supportsSticky = featureTest('position', 'sticky') || featureTest('position', '-webkit-sticky');
 
-if(!supportsSticky) {
+if (!supportsSticky) {
     document.body.classList.add("no-sticky");
 } else {
     document.body.classList.add("has-sticky");
@@ -53,13 +53,13 @@ const checkTags = () => {
 
         shouldPauseVideo(timingToAimFor);
     } else {
-        if(currentTargetTime > timingToAimFor) {
-            videoEl.pause();
-            let timeToGoTo = (passedPs.length - 2 > 0) ? timings[passedPs.length] : 0;
-            videoEl.currentTime = timeToGoTo;
+        //     if(currentTargetTime > timingToAimFor) {
+        //         videoEl.pause();
+        //         let timeToGoTo = (passedPs.length - 2 > 0) ? timings[passedPs.length] : 0;
+        //         videoEl.currentTime = timeToGoTo;
 
-            currentTargetTime = timingToAimFor;
-        }
+        //         currentTargetTime = timingToAimFor;
+        //     }
     }
 }
 
@@ -79,38 +79,46 @@ const doScrollyThings = () => {
 
         checkTags();
 
-        if (!supportsSticky) {
-            fixOrUnfix();
-        }
+        // if (!supportsSticky) {
+        fixOrUnfix();
+        // }
     }
 
     requestAnimationFrame(doScrollyThings);
 }
 
-const fixOrUnfix = () => {    const containerBBox = videoElContainer.getBoundingClientRect();
+const fixOrUnfix = () => {
+    const containerBBox = videoElContainer.getBoundingClientRect();
     const containerTop = containerBBox.top;
 
-    if(containerBBox.bottom < window.innerHeight) {
-        videoElParent.style.position = "";
-        videoElParent.style.top = "auto";
-        videoElParent.style.bottom = 0;
-    } else if (videoElContainer.getBoundingClientRect().top <= 0) {
-        videoElParent.style.top = "0";
-        videoElParent.style.bottom = "auto";
-        videoElParent.style.position = "fixed";
-    } else {
-        videoElParent.style.top = "0";
-        videoElParent.style.bottom = "auto";
-        videoElParent.style.position = "";
+    if(containerTop > 0) {
+        currentTargetTime = 0;
+        videoEl.currentTime = 0;
+    }
+
+    if (!supportsSticky) {
+        if (containerBBox.bottom < window.innerHeight) {
+            videoElParent.style.position = "";
+            videoElParent.style.top = "auto";
+            videoElParent.style.bottom = 0;
+        } else if (videoElContainer.getBoundingClientRect().top <= 0) {
+            videoElParent.style.top = "0";
+            videoElParent.style.bottom = "auto";
+            videoElParent.style.position = "fixed";
+        } else {
+            videoElParent.style.top = "0";
+            videoElParent.style.bottom = "auto";
+            videoElParent.style.position = "";
+        }
     }
 }
 
 const switchSrc = () => {
     const width = videoEl.clientWidth;
-    if(width > 620) {
+    if (width > 620) {
         videoEl.setAttribute("src", process.env.PATH + "/assets/ships_1.mp4");
         videoEl.load();
-    } else if(width > 600) {
+    } else if (width > 600) {
         videoEl.setAttribute("src", process.env.PATH + "/assets/ships_2.mp4");
         videoEl.load();
     } else {

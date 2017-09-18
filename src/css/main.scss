@@ -159,24 +159,24 @@
     }
 
     @include mq(tablet) {
-        width: 740px;
+        width: 700px;
         // margin-left: -10px;
         height:65vh;
     }
 
 
     @include mq(desktop) {
-        width: 980px;
+        width: 940px;
         height:100vh;
     }
 
     @include mq(leftCol) {
-        width: 1140px;
+        width: 1100px;
         height:100vh;
     }
 
     @include mq(wide) {
-        width: 1300px;
+        width: 1260px;
         height:100vh;
     }
 
@@ -191,11 +191,11 @@
 
 figure.element-interactive iframe {
   @include mq(mobile) {
-    width:320px;
+    width:100vw !important;
   }
 
   @include mq(mobileLandscape) {
-    width:480px !important;
+    width:100vw !important;
   }
 
   @include mq(tablet) {
@@ -213,4 +213,10 @@ figure.element-interactive iframe {
   @include mq(wide) {
     width:1300px !important;
   }
+}
+
+// css hacks to fix the page :) 
+
+.element--immersive {
+
 }
