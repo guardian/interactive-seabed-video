@@ -208,7 +208,7 @@
     }
 }
 
-figure.element-interactive iframe {
+figure.element-interactive.element--immersive iframe {
   @include mq(mobile) {
     width:100vw !important;
   }
