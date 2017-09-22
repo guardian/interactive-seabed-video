@@ -18,8 +18,8 @@
 }
 
 .content__main-column--interactive>h2 {
-  font-size: 32px !important;
-  line-height: 42px !important;
+  font-size: 28px !important;
+  line-height: 38px !important;
   font-family: "Guardian Egyptian Web", Georgia;
   font-weight: 200;
 
@@ -33,14 +33,14 @@
     line-height: 32px !important;
   }
 
-  @include mq($from: tablet, $until:leftCol) {
+  @include mq($from: tablet) {
     font-size: 28px !important;
     line-height: 38px !important;
   }
 
-  @include mq($from: leftCol) {
-    font-size: 32px !important;
-    line-height: 42px !important;
+  // @include mq($from: leftCol) {
+  //   font-size: 32px !important;
+  //   line-height: 42px !important;
   }
 }
 
@@ -116,8 +116,8 @@
         box-decoration-break: clone;
         -webkit-box-decoration-break: clone;
         // @include fs-headline(3);
-        font-size: 32px;
-        line-height: 42px;
+        font-size: 28px;
+        line-height: 38px;
         font-weight: 200;
 
         @include mq($from: mobile, $until:mobileLandscape) {
@@ -131,15 +131,15 @@
           line-height: 32px;
         }
 
-        @include mq($from: tablet, $until:leftCol) {
+        @include mq($from: tablet) {
           font-size: 28px;
           line-height: 38px;
         }
 
-        @include mq($from: leftCol) {
-          font-size: 32px;
-          line-height: 42px;
-        }
+        // @include mq($from: leftCol) {
+        //   font-size: 32px;
+        //   line-height: 42px;
+        // }
 
         @include mq($from: mobileLandscape, $until: tablet){
 
