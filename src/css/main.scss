@@ -30,18 +30,18 @@
 
   @include mq($from: mobileLandscape, $until:tablet) {
     font-size: 24px !important;
-    line-height: 32px !important;
+    line-height: 30px !important;
   }
 
   @include mq($from: tablet) {
     font-size: 28px !important;
-    line-height: 38px !important;
+    line-height: 36px !important;
   }
 
   // @include mq($from: leftCol) {
   //   font-size: 32px !important;
   //   line-height: 42px !important;
-  }
+  // }
 }
 
 .interactive-seabed__text-wrapper {
@@ -115,12 +115,11 @@
         padding: 5px 5px 5px 5px;
         box-decoration-break: clone;
         -webkit-box-decoration-break: clone;
-        // @include fs-headline(3);
         font-size: 28px;
-        line-height: 38px;
+        line-height: 36px;
         font-weight: 200;
 
-        @include mq($from: mobile, $until:mobileLandscape) {
+        @include mq($from: mobile, $until: mobileLandscape) {
           font-size: 21px;
           line-height: 28px;
 
@@ -128,23 +127,18 @@
 
         @include mq($from: mobileLandscape, $until:tablet) {
           font-size: 24px;
-          line-height: 32px;
+          line-height: 30px;
         }
 
         @include mq($from: tablet) {
           font-size: 28px;
-          line-height: 38px;
+          line-height: 36px;
         }
 
         // @include mq($from: leftCol) {
         //   font-size: 32px;
         //   line-height: 42px;
         // }
-
-        @include mq($from: mobileLandscape, $until: tablet){
-
-        }
-
 
 
     }
