@@ -32,6 +32,16 @@ if (!supportsSticky) {
     document.body.classList.add("has-sticky");
 }
 
+setTimeout(() => {
+    const videoHeight = videoEl.clientHeight;
+
+    const screenHeight = window.innerHeight;
+
+    const negativeMargin = (screenHeight - videoHeight) / 2;
+    // 
+    document.querySelector(".interactive-seabed__text-wrapper").style.marginBottom = -negativeMargin + 24 + "px";;
+}, 2000)
+
 //just caching some selectors incase the browser doesn't support position: sticky
 
 const checkTags = () => {
@@ -91,7 +101,7 @@ const fixOrUnfix = () => {
     const containerBBox = videoElContainer.getBoundingClientRect();
     const containerTop = containerBBox.top;
 
-    if(containerTop > 0) {
+    if (containerTop > 0) {
         currentTargetTime = 0;
         videoEl.currentTime = 0;
     }

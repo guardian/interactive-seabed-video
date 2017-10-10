@@ -47,22 +47,22 @@
 .interactive-seabed__text-wrapper {
 
       margin-top: -100vh;
-      @include mq(mobile){
-        margin-top: -85vh;
-      }
+      // @include mq(mobile){
+      //   margin-top: -100vh;
+      // }
 
-      @include mq(mobileLandscape){
-        margin-top: -82vh;
-      }
-      @include mq(tablet){
-        margin-top: -65vh;
-      }
-      @include mq(desktop){
-        margin-top: -100vh;
-      }
-      @include mq(wide){
-        margin-top: -100vh;
-      }
+      // @include mq(mobileLandscape){
+      //   margin-top: -100vh;
+      // }
+      // @include mq(tablet){
+      //   margin-top: -100vh;
+      // }
+      // @include mq(desktop){
+      //   margin-top: -100vh;
+      // }
+      // @include mq(wide){
+      //   margin-top: -100vh;
+      // }
 }
 
 .interactive-seabed__text {
@@ -163,18 +163,18 @@
 
     @include mq(mobile) {
         // margin-left: -10px;
-        height:85vh;
+        // height:85vh;
     }
 
     @include mq(mobileLandscape) {
         // margin-left: -10px;
-        height:82vh;
+        // height:82vh;
     }
 
     @include mq(tablet) {
         width: 700px;
         // margin-left: -10px;
-        height:65vh;
+        // height:65vh;
     }
 
 
