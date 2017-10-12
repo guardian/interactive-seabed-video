@@ -5,6 +5,12 @@
 // @import "embed";
 // Uncomment for full screen (including immersive article main media)
 //@import "fullscreen";
+
+.content__headline {
+  font-size:52px !important;
+  line-height: 56px !important;
+}
+
 .interactive-atom,
 .element--immersive iframe {
     margin-left: -10px;
@@ -38,10 +44,28 @@
     line-height: 36px !important;
   }
 
-  // @include mq($from: leftCol) {
-  //   font-size: 32px !important;
-  //   line-height: 42px !important;
-  // }
+}
+
+.content__main-column--interactive>h2::before {
+  content: '';
+  background-color:#2bd8ef;
+  width:4px;
+  display:inline-block;
+  height:30px;
+  transform: translate(0px,5px);
+  margin-right:5px;
+
+  @include mq($from: mobile, $until: mobileLandscape) {
+    height:26px;
+  }
+
+  @include mq($from: mobileLandscape, $until:tablet) {
+    height:24px;
+  }
+
+  @include mq($from: tablet) {
+    height:30px;
+  }
 }
 
 .interactive-seabed__text-wrapper {
@@ -110,38 +134,57 @@
     p {
         font-family: "Guardian Egyptian Web", Georgia;
         display: inline;
-        background-color: rgba(255, 255, 255, 0.76);
+        background-color:#fcfcfc;
         color: #333;
         padding: 5px 5px 5px 5px;
         box-decoration-break: clone;
         -webkit-box-decoration-break: clone;
         font-size: 28px;
-        line-height: 36px;
+        line-height: 32px;
         font-weight: 200;
 
         @include mq($from: mobile, $until: mobileLandscape) {
           font-size: 21px;
-          line-height: 28px;
+          line-height: 32px;
 
         }
 
         @include mq($from: mobileLandscape, $until:tablet) {
           font-size: 24px;
-          line-height: 30px;
+          line-height: 36px;
         }
 
         @include mq($from: tablet) {
           font-size: 28px;
-          line-height: 36px;
+          line-height: 40px;
+        }
+    }
+
+    p::before {
+        content: '';
+        background-color:#2bd8ef;
+        width:4px;
+        display:inline-block;
+        height:38px;
+        transform: translate(-5px,11px);
+
+        @include mq($from: mobile, $until: mobileLandscape) {
+          height:30px;
+          transform: translate(-5px,10px);
+
         }
 
-        // @include mq($from: leftCol) {
-        //   font-size: 32px;
-        //   line-height: 42px;
-        // }
+        @include mq($from: mobileLandscape, $until:tablet) {
+          height:34px;
+          transform: translate(-5px,10px);
+        }
 
+        @include mq($from: tablet) {
+          height:38px;
+          transform: translate(-5px,11px);
+        }
 
-    }
+}
 }
 
 .interactive-seabed__container {
@@ -162,13 +205,12 @@
     width: 100vw;
 
     @include mq(mobile) {
-        // margin-left: -10px;
-        // height:85vh;
+      margin-left:-0.625rem;
     }
 
     @include mq(mobileLandscape) {
-        // margin-left: -10px;
-        // height:82vh;
+      margin-left:-0.625rem;
+
     }
 
     @include mq(tablet) {
