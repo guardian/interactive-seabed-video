@@ -9,6 +9,11 @@
 .content__headline {
   font-size:52px !important;
   line-height: 56px !important;
+
+  @include mq($until:tablet){
+    font-size:36px !important;
+    line-height: 42px !important;
+  }
 }
 
 .interactive-atom,
@@ -202,15 +207,11 @@
     line-height: 0;
     height: 100vh;
     overflow: hidden;
-    width: 100vw;
+    // width: 100vw;
 
     @include mq(mobile) {
       margin-left:-0.625rem;
-    }
-
-    @include mq(mobileLandscape) {
-      margin-left:-0.625rem;
-
+      margin-right:-10px;
     }
 
     @include mq(tablet) {
