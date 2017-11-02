@@ -76,6 +76,7 @@
 .interactive-seabed__text-wrapper {
 
       margin-top: -100vh;
+      z-index:999;
       // @include mq(mobile){
       //   margin-top: -100vh;
       // }
@@ -99,6 +100,7 @@
     position: relative;
     z-index: 200;
     max-width: 620px;
+    transform: translateZ(0px);
 
     @include mq(mobile) {
       height: 85vh;
@@ -147,6 +149,7 @@
         font-size: 28px;
         line-height: 32px;
         font-weight: 200;
+        transform: translateZ(0px);
 
         @include mq($from: mobile, $until: mobileLandscape) {
           font-size: 21px;
